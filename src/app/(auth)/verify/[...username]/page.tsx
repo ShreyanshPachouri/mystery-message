@@ -29,7 +29,7 @@ const VerifyAccount = () => {
 
     const onSubmit = async(data: z.infer<typeof verifySchema>) => {
         try{
-            const response = await axios.post(`api/verify-code`, {
+            const response = await axios.post(`/api/verify-code`, {
                 username: param.username,
                 code: data.code
             })
@@ -39,7 +39,7 @@ const VerifyAccount = () => {
                 description: response.data.message
             })
 
-            router.replace('sign-in')
+            router.replace('/sign-in')
         }
 
         catch(error){

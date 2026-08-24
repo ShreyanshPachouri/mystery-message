@@ -10,7 +10,7 @@ export async function POST(req: Request){
     const session = await getServerSession(authOptions)
     const user: User = session?.user
 
-    if(!session || session.user){
+    if(!session || !session.user){
         return Response.json({
             success: false,
             message: "User is not logged in"
@@ -60,7 +60,7 @@ export async function GET(req: Request){
     const session = await getServerSession(authOptions)
     const user: User = session?.user
 
-    if(!session || session.user){
+    if(!session || !session.user){
         return Response.json({
             success: false,
             message: "User is not logged in"
@@ -85,7 +85,7 @@ export async function GET(req: Request){
             success: true,
             isAcceptingMessages: foundUser.isAcceptingMessage
         },
-            {status: 404})
+            {status: 200})
         }
 
     catch(error){

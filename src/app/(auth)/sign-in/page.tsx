@@ -53,7 +53,7 @@ export default function SignInForm() {
       }
     }
 
-    if (result?.url) {
+    else {
       router.replace('/dashboard');
     }
   };
