@@ -34,7 +34,7 @@ export async function POST(req: Request){
             success: true,
             message: "Message sent successfully"
         },
-        {status: 404})
+        {status: 200})
     }
 
     catch(error){
