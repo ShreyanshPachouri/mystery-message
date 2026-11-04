@@ -52,7 +52,7 @@ export function VerificationEmail({ username, otp }: VerificationEmailProps) {
         </Row>
         {/* <Row>
           <Button
-            href={`http://localhost:3000/verify/${username}`}
+            href={`${process.env.NEXTAUTH_URL ?? 'http://localhost:3000'}/verify/${username}`}
             style={{ color: '#61dafb' }}
           >
             Verify here
